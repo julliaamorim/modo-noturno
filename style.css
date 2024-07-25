@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cor-de-fundo: white;
+    --cor-textual: black;
+    --cor-fundo-botao: purple;
+    --cor-textual-botao: white;
+}
+
+.modo-noturno {
+    --cor-de-fundo: rgb(33, 33, 33);
+    --cor-textual: white;
+    --cor-fundo-botao: rgb(235, 32, 235);
+    --cor-textual-botao: black;
+    transition: background-color 0.4s;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--cor-de-fundo);
+    color: var(--cor-textual);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 15px;
+}
+
+button {
+    height: 40px;
+    width: 160px;
+    border-radius: 20px;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: var(--cor-fundo-botao);
+    color: var(--cor-textual-botao);
+}
+
+.troca-modo-container {
+    position: relative;
+    height: 34px;
+    width: 60px;
+}
+
+.troca-modo-container input[type="checkbox"] {
+  display: none;
+}
+
+.deslizador {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 34px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.deslizador::before {
+    content: "";
+    position: absolute;
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: transform 0.4s;
+}
+
+input[type="checkbox"]:checked + .deslizador {
+    background-color: var(--cor-fundo-botao);
+}
+
+input[type="checkbox"]:checked + .deslizador::before {
+    transform: translateX(26px);
+}
