@@ -85,3 +85,9 @@ input[type="checkbox"]:checked + .deslizador {
 input[type="checkbox"]:checked + .deslizador::before {
     transform: translateX(26px);
 }
+
+
+footer {
+	text-align: center;
+	color: #ce0e7e;
+}
